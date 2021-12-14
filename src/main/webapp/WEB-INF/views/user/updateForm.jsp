@@ -3,6 +3,7 @@
 
 <div class="container">
 	<form>
+    <input type="hidden" id="id" value="${principal.user.id}"/>
 		<div class="form-group">
 			<label for="username">Username</label> 
 			<input type="text" value="${principal.user.username}" class="form-control" placeholder="Enter username" id="username" readonly="readonly">
@@ -10,7 +11,7 @@
 		
 		<div class="form-group">
 			<label for="pwd">Password</label> 
-			<input type="password" value="${principal.user.password}" class="form-control" placeholder="Enter password" id="password">
+			<input type="password" class="form-control" placeholder="Enter password" id="password">
 		</div>
 		
 		<div class="form-group">
