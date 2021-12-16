@@ -10,9 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.DynamicInsert;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,7 +29,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(nullable= false, length=30, unique = true)
+	@Column(nullable= false, length=100, unique = true)
 	private String username;
 	
 	@Column(nullable = false, length = 100)
@@ -43,6 +41,8 @@ public class User {
 	//@ColumnDefault("'user'")
 	@Enumerated(EnumType.STRING)
 	private RoleType role;
+	
+	private String oauth;  //kakao, google
 	 
 	@CreationTimestamp
 	private Timestamp createDate;
