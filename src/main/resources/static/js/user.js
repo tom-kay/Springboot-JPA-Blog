@@ -25,11 +25,15 @@ let index = {
 			dataType: "json"	//응답
 			
 		}).done(function(resp){
-			alert("회원가입이 완료되었습니다");
+		  alert("회원가입이 완료되었습니다");
 			console.log(resp);
 			location.href="/";
 		}).fail(function(error){
-			alert(JSON.stringify(error));
+		  if(error.status === 500) {
+		    alert("회원가입에 실패했습니다.");
+		  } else {
+		    alert(JSON.stringify(error));		    
+		  };
 		});
 	},
 	
